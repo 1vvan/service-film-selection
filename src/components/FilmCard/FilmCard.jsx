@@ -4,10 +4,10 @@ import FilmModal from "../FilmModal/FilmModal";
 import likeIcon from "../../assets/likeIcon.png";
 import dislikeIcon from "../../assets/dislikeIcon.png";
 import { Card } from "react-bootstrap";
-import "./FilmCard.scss";
 import AccessModal from "../AccessModal/AccessModal";
+import "./FilmCard.scss";
 
-const FilmCard = ({ selectedCategories, setUserWantToWatchFilms }) => {
+const FilmCard = ({ selectedCategories }) => {
   const [movie, setMovie] = useState();
   const [showModal, setShowModal] = useState(false);
   const [showAccessModal, setAccessShowModal] = useState(false);
@@ -47,10 +47,6 @@ const FilmCard = ({ selectedCategories, setUserWantToWatchFilms }) => {
 
     fetchMovies();
   }, [selectedCategories]);
-
-  if (movie) {
-    console.log(movie);
-  }
 
   const handleDislike = () => {
     const filmCard = document.querySelector(".card__wrapper");
@@ -97,7 +93,6 @@ const FilmCard = ({ selectedCategories, setUserWantToWatchFilms }) => {
         movie={movie}
         showAccessModal={showAccessModal}
         onCloseAccessModal={handleCloseAccessModal}
-        setUserWantToWatchFilms={setUserWantToWatchFilms}
       />
       {movie ? (
         <div className={`card__wrapper ${movie ? "film-card__visible" : ""}`}>

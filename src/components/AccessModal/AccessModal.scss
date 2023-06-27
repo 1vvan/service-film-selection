@@ -1,9 +1,21 @@
 .access-modal__footer{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1vw;
 }
+.access-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    width: 100%;
+}
 .access-modal__button{
-    width: 40%;
+    width: 100%;
+}
+
+strong p{
+    margin: 5vw 0px 0px 0px;
 }

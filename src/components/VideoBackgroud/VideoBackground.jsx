@@ -8,7 +8,7 @@ const VideoBackground = () => {
         <video
           className="video_bg"
           src={videoBg}
-          playsinline
+          playsInline
           autoPlay
           loop
           muted

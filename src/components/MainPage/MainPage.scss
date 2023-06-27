@@ -51,23 +51,3 @@
     opacity: 1;
     transition: all 1.5s ease 0s;
 }
-.watched-films__btn{
-    opacity: 0;
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    z-index: 999;
-    transition: all 1.5s ease 0s;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    color: #fff;
-}
-.watched-films__btn-visible{
-    opacity: 1;
-    transition: all 1.5s ease 0s;
-}

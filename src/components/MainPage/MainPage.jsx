@@ -4,17 +4,10 @@ import VideoBackground from "../VideoBackgroud/VideoBackground";
 import FilmCard from "../FilmCard/FilmCard";
 import returnBtn from '../../assets/backIcon.png'
 import "./MainPage.scss";
-import WatchedFilmsModal from "../WatchedFilmsModal/WatchedFilmsModal";
 
 const MainPage = () => {
   const [isCategoriesVisible, setIsCategoriesVisible] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [showWatchedFilmsModal, setWatchedFilmsModal] = useState(false);
-  const [userWantToWatchFilms, setUserWantToWatchFilms] =
-    useState(false);
-
-  const handleCloseWatchedFilmsModal = () => setWatchedFilmsModal(false);
-  const handleShowWatchedFilmsModal = () => setWatchedFilmsModal(true);
 
 
   return (
@@ -41,23 +34,8 @@ const MainPage = () => {
             >
               <img src={returnBtn} alt="" />
             </button>
-            <button
-              className={`watched-films__btn ${
-                isCategoriesVisible === false && userWantToWatchFilms === true
-                  ? "watched-films__btn-visible"
-                  : ""
-              }`}
-              onClick={handleShowWatchedFilmsModal}
-            >
-              Просмотренные фильмы
-            </button>
             <FilmCard
               selectedCategories={selectedCategories}
-              setUserWantToWatchFilms={setUserWantToWatchFilms}
-            />
-            <WatchedFilmsModal
-              showModal={showWatchedFilmsModal}
-              onCloseModal={handleCloseWatchedFilmsModal}
             />
           </div>
         </div>

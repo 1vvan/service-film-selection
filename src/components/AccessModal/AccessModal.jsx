@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "./AccessModal.scss";
 
-const AccessModal = ({
-  movie,
-  showAccessModal,
-  onCloseAccessModal,
-  setUserWantToWatchFilms,
-}) => {
+const AccessModal = ({ movie, showAccessModal, onCloseAccessModal }) => {
+  const [showWatchedFilms, setShowWatchedFilms] = useState(false);
+  const [watchedFilms, setWatchedFilms] = useState(false);
+
   const handleSaveMovie = (movie) => {
     const savedFilms = JSON.parse(localStorage.getItem("watchedFilms")) || [];
 
@@ -15,9 +13,9 @@ const AccessModal = ({
       savedFilms.push(movie);
       localStorage.setItem("watchedFilms", JSON.stringify(savedFilms));
       onCloseAccessModal();
+      setShowWatchedFilms(false);
     } else {
-      alert("Вы уже смотрели этот фильм! Вы можете посмотреть какие фильмы вы уже видел на главной странице.");
-      setUserWantToWatchFilms(true);
+      alert("Вы уже смотрели этот фильм!");
     }
   };
 
@@ -26,6 +24,11 @@ const AccessModal = ({
     const options = { year: "numeric", month: "long", day: "numeric" };
     return date.toLocaleDateString("ru-RU", options);
   };
+
+  const handleButtonClick = () => {
+    setShowWatchedFilms(true)
+    setWatchedFilms(JSON.parse(localStorage.getItem("watchedFilms")));
+  }
 
   return (
     <>
@@ -46,21 +49,40 @@ const AccessModal = ({
           ) : (
             ""
           )}
+          {showWatchedFilms === true ? (
+            <strong >
+              <p>Просмотренные фильмы:</p>
+            </strong>
+          ) : (
+            ""
+          )}
+          {showWatchedFilms === true
+            ? watchedFilms.map((film) => <p key={film.id}>{film.title}</p>)
+            : ""}
         </Modal.Body>
         <Modal.Footer className="access-modal__footer">
-          <Button
-            className="access-modal__button"
-            variant="danger"
-            onClick={onCloseAccessModal}
-          >
-            Отмена
-          </Button>
+          <div className="access-buttons">
+            <Button
+              className="access-modal__button"
+              variant="danger"
+              onClick={onCloseAccessModal}
+            >
+              Отмена
+            </Button>
+            <Button
+              className="access-modal__button"
+              variant="success"
+              onClick={() => handleSaveMovie(movie)}
+            >
+              Да, буду!
+            </Button>
+          </div>
           <Button
             className="access-modal__button"
             variant="success"
-            onClick={() => handleSaveMovie(movie)}
+            onClick={handleButtonClick}
           >
-            Да, буду!
+            Просмотренные фильмы
           </Button>
         </Modal.Footer>
       </Modal>
