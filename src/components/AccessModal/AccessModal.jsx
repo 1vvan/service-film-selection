@@ -49,14 +49,14 @@ const AccessModal = ({ movie, showAccessModal, onCloseAccessModal }) => {
           ) : (
             ""
           )}
-          {showWatchedFilms === true ? (
-            <strong >
+          {showWatchedFilms === true && watchedFilms.length > 0 ? (
+            <strong>
               <p>Просмотренные фильмы:</p>
             </strong>
           ) : (
             ""
           )}
-          {showWatchedFilms === true
+          {showWatchedFilms === true && watchedFilms.length > 0
             ? watchedFilms.map((film) => <p key={film.id}>{film.title}</p>)
             : ""}
         </Modal.Body>
