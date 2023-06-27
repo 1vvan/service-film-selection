@@ -2,93 +2,94 @@ const categories = [
     {
         id: 1,
         name: "Боевик",
-        value: "Action",
+        value: 28,
     },
     {
         id: 2,
         name: "Приключения",
-        value: "Adventure",
+        value: 12,
     },
     {
         id: 3,
         name: "Анимация",
-        value: "Animation",
+        value: 16,
     },
     {
         id: 4,
         name: "Комедия",
-        value: "Comedy",
+        value: 35,
     },
     {
         id: 5,
         name: "Криминал",
-        value: "Crime",
+        value: 80,
     },
     {
         id: 6,
         name: "Документальный",
-        value: "Documentary",
+        value: 99,
     },
     {
         id: 7,
         name: "Драма",
-        value: "Drama",
+        value: 18,
     },
     {
         id: 8,
         name: "Семейный",
-        value: "Family",
+        value: 10751,
     },
     {
         id: 9,
         name: "Фэнтези",
-        value: "Fantasy",
+        value: 14,
     },
     {
         id: 10,
         name: "История",
-        value: "History",
+        value: 36,
     },
     {
         id: 11,
         name: "Ужасы",
-        value: "Horror",
+        value: 27,
     },
     {
         id: 12,
         name: "Музыка",
-        value: "Music",
+        value: 10402,
     },
     {
         id: 13,
         name: "Мистика",
-        value: "Mystery",
+        value: 9648,
     },
     {
         id: 14,
         name: "Романтика",
-        value: "Romance",
+        value: 10749,
     },
     {
         id: 15,
         name: "Научная фантастика",
-        value: "Science Fiction",
+        value: 878,
     },
     {
         id: 16,
         name: "Триллер",
-        value: "Thriller",
+        value: 53,
     },
     {
         id: 17,
         name: "Военный",
-        value: "War",
+        value: 10752,
     },
     {
         id: 18,
         name: "Вестерн",
-        value: "Western",
+        value: 37,
     },
 ];
+
 
 export default categories;
