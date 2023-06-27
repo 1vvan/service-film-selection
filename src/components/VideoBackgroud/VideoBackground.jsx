@@ -4,9 +4,16 @@ import "./VideoBackground.css"
 
 const VideoBackground = () => {
     return (
-        <>
-            <video className='video_bg' src={videoBg} autoPlay loop muted></video>
-        </>
+      <>
+        <video
+          className="video_bg"
+          src={videoBg}
+          playsinline
+          autoPlay
+          loop
+          muted
+        ></video>
+      </>
     );
 }
 
